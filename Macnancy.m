@@ -21,8 +21,6 @@
 
     self.daysRemainingMenuItem = [NSMenuItem new];
     self.deliveryDateMenuItem  = [NSMenuItem new];
-    [self.menu addItem:self.daysRemainingMenuItem];
-    [self.menu addItem:self.deliveryDateMenuItem];
 
     [self.dateTypeComboBox selectItemAtIndex:0];
     lastDateTypeIndex = 0;
@@ -30,6 +28,9 @@
     [self.datePicker setDateValue:self.deliveryDate];
 
     [self action];
+
+    [self.menu addItem:self.daysRemainingMenuItem];
+    [self.menu addItem:self.deliveryDateMenuItem];
 }
 
 - (void)action {
