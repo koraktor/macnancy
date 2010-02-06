@@ -281,6 +281,7 @@
 				GCC_PREFIX_HEADER = Macnancy_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Application Support/Palantir/PlugIns";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = Macnancy;
 				WRAPPER_EXTENSION = pal;
 			};
@@ -297,6 +298,7 @@
 				GCC_PREFIX_HEADER = Macnancy_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Application Support/Palantir/PlugIns";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PRODUCT_NAME = Macnancy;
 				WRAPPER_EXTENSION = pal;
 			};
