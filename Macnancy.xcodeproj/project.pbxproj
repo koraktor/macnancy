@@ -280,7 +280,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Macnancy_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				INSTALL_PATH = "$(HOME)/Application Support/Palantir/PlugIns";
 				PRODUCT_NAME = Macnancy;
 				WRAPPER_EXTENSION = pal;
 			};
@@ -296,7 +296,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Macnancy_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				INSTALL_PATH = "$(HOME)/Application Support/Palantir/PlugIns";
 				PRODUCT_NAME = Macnancy;
 				WRAPPER_EXTENSION = pal;
 			};
