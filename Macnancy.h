@@ -11,11 +11,13 @@
 
 @interface Macnancy : PalantirPlugin <NSComboBoxDelegate, NSDatePickerCellDelegate> {
 
-    NSMenuItem *daysRemainingMenuItem;
-    NSDate     *deliveryDate;
-    NSMenuItem *deliveryDateMenuItem;
-    NSInteger   lastDateTypeIndex;
-    NSDate     *today;
+    NSDatePicker *datePicker;
+    NSComboBox   *dateTypeComboBox;
+    NSMenuItem   *daysRemainingMenuItem;
+    NSDate       *deliveryDate;
+    NSMenuItem   *deliveryDateMenuItem;
+    NSInteger     lastDateTypeIndex;
+    NSDate       *today;
 
 }
 
