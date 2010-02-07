@@ -37,6 +37,10 @@
     NSDateComponents *components = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:[NSDate date]];
     NSDate *newToday = [gregorianCalendar dateFromComponents:components];
 
+    if(self.deliveryDate == nil) {
+        self.deliveryDate = newToday;
+    }
+
     if(![newToday isEqualToDate:self.today]) {
         self.today = newToday;
         [self update];
