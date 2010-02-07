@@ -17,8 +17,6 @@
             deliveryDateMenuItem, today;
 
 - (void)awakeFromNib {
-    [super awakeFromNib];
-
     self.daysRemainingMenuItem = [NSMenuItem new];
     self.deliveryDateMenuItem  = [NSMenuItem new];
 
@@ -27,6 +25,7 @@
     self.deliveryDate = [self settingWithName:@"deliveryDate"];
     [self.datePicker setDateValue:self.deliveryDate];
 
+    [super awakeFromNib];
     [self action];
 
     [self.menu addItem:self.daysRemainingMenuItem];
