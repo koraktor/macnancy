@@ -23,6 +23,11 @@
     [self.dateTypeComboBox selectItemAtIndex:0];
     lastDateTypeIndex = 0;
     self.deliveryDate = [self settingWithName:@"deliveryDate"];
+    if(self.deliveryDate == nil) {
+        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        NSDateComponents *components = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:[NSDate date]];
+        [self.datePicker setDateValue:[gregorianCalendar dateFromComponents:components]];
+    }
     [self.datePicker setDateValue:self.deliveryDate];
 
     [super awakeFromNib];
