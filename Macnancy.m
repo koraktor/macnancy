@@ -26,7 +26,7 @@
     if(self.deliveryDate == nil) {
         NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
         NSDateComponents *components = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:[NSDate date]];
-        [self.datePicker setDateValue:[gregorianCalendar dateFromComponents:components]];
+        self.deliveryDate = [gregorianCalendar dateFromComponents:components];
     }
     [self.datePicker setDateValue:self.deliveryDate];
 
@@ -41,10 +41,6 @@
     NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *components = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:[NSDate date]];
     NSDate *newToday = [gregorianCalendar dateFromComponents:components];
-
-    if(self.deliveryDate == nil) {
-        self.deliveryDate = newToday;
-    }
 
     if(![newToday isEqualToDate:self.today]) {
         self.today = newToday;
