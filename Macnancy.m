@@ -10,6 +10,7 @@
 #define DIFFERENCE_LAST_PERIOD 24192000
 #define DIFFERENCE_CONCEPTION_DATE 22982400
 
+static NSCalendar *calendar;
 
 @implementation Macnancy
 
@@ -20,13 +21,16 @@
     self.daysRemainingMenuItem = [NSMenuItem new];
     self.deliveryDateMenuItem  = [NSMenuItem new];
 
+    if(calendar == nil) {
+        calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    }
+
     [self.dateTypeComboBox selectItemAtIndex:0];
     lastDateTypeIndex = 0;
     self.deliveryDate = [self settingWithName:@"deliveryDate"];
     if(self.deliveryDate == nil) {
-        NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-        NSDateComponents *components = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:[NSDate date]];
-        self.deliveryDate = [gregorianCalendar dateFromComponents:components];
+        NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:[NSDate date]];
+        self.deliveryDate = [calendar dateFromComponents:components];
     }
     [self.datePicker setDateValue:self.deliveryDate];
 
@@ -38,9 +42,8 @@
 }
 
 - (void)action {
-    NSCalendar *gregorianCalendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *components = [gregorianCalendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:[NSDate date]];
-    NSDate *newToday = [gregorianCalendar dateFromComponents:components];
+    NSDateComponents *components = [calendar components:(NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit) fromDate:[NSDate date]];
+    NSDate *newToday = [calendar dateFromComponents:components];
 
     if(![newToday isEqualToDate:self.today]) {
         self.today = newToday;
